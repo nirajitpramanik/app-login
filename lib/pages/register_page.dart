@@ -33,14 +33,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       if (passwordController.text == confirmpasswordController.text) {
-        Navigator.pop(context);
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text, 
         password: passwordController.text
         ); 
       }
       else {
-          Navigator.pop(context);
           showErrormessage("Passwords don't match!");
       }
       Navigator.pop(context);
